@@ -8,7 +8,6 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 //State
 let myLeads = [];
 let oldLeads = [];
-const tab = [];
 
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
