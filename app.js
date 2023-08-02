@@ -7,7 +7,6 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
 //State
 let myLeads = [];
-let oldLeads = [];
 
 if (leadsFromLocalStorage) {
   myLeads = leadsFromLocalStorage;
@@ -34,7 +33,7 @@ function render(leads) {
 
 tabBtn.addEventListener("click", () => {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    myLeads.push(tab[0].url);
+    myLeads.push(tabs[0].url);
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
     render(myLeads);
   });
